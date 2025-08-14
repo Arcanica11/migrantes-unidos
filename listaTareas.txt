@@ -1,0 +1,23 @@
+#### **1. Estructura y Optimización General**
+-   [ ] **Crear un componente `Layout`:** Centraliza la estructura de la página (menú de navegación y pie de página) en un solo archivo dentro de la carpeta `src/components`.
+-   [ ] **Integrar el `Layout`:** Modifica el archivo `_app.js` para que envuelva todas las páginas de tu sitio con el nuevo componente `Layout`.
+-   [ ] **Limpiar las páginas:** Elimina las importaciones repetidas de `Navbar` y `Footer` de cada página individual, ya que ahora `Layout` se encarga de ellas.
+
+#### **2. Implementación del Formulario de Contacto**
+-   [ ] **Elegir un servicio para enviar correos:** Investiga y decide entre opciones como **Resend** (recomendado por su modernidad), Nodemailer o EmailJS.
+-   [ ] **Registrarse y obtener la clave API:** Crea una cuenta en el servicio que elegiste y guarda tu clave API en un lugar seguro.
+-   [ ] **Configurar variables de entorno:** Crea un archivo `.env.local` en la raíz de tu proyecto para guardar la clave API de forma segura, sin subirla a repositorios como GitHub.
+-   [ ] **Instalar la librería necesaria:** Ejecuta `npm install` para añadir la dependencia del servicio de correo (ej: `resend`).
+-   [ ] **Crear la API Route:** Crea un nuevo archivo en `src/pages/api/` (por ejemplo, `contact.js`) que manejará la lógica para enviar el correo.
+-   [ ] **Conectar el formulario del frontend:** Modifica tu componente de formulario para que, al enviarlo, haga una petición de tipo `POST` a tu nueva API Route, pasándole los datos del usuario.
+-   [ ] **Añadir manejo de estados:** Implementa estados de "cargando", "éxito" y "error" en tu formulario para dar retroalimentación visual al usuario.
+
+#### **3. Integración de Íconos**
+-   [ ] **Instalar la librería `react-icons`:** Ejecuta `npm install react-icons` para tener acceso a miles de íconos.
+-   [ ] **Identificar íconos necesarios:** Haz una lista de los íconos que usarás en la web (redes sociales, teléfono, email, etc.).
+-   [ ] **Importar y usar los íconos:** En los componentes donde los necesites (como `Footer` o `contactanos.js`), importa los íconos específicos que quieres usar desde `react-icons`.
+
+#### **4. Mantenimiento de Dependencias**
+-   [ ] **Revisar el archivo `package.json`:** Identifica las versiones de `react` y `next`.
+-   [ ] **Actualizar a versiones estables:** Cambia los números de versión de `react` y `next` a las últimas versiones estables (ej: `18.3.1` y `14.2.4` respectivamente) para asegurar la máxima compatibilidad y evitar errores de versiones experimentales.
+-   [ ] **Ejecutar `npm install`:** Después de cambiar las versiones en `package.json`, corre este comando para que se descarguen y apliquen las versiones correctas en tu proyecto.
