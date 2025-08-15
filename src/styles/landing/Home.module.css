@@ -1,0 +1,50 @@
+/* src/styles/landing/Home.module.css */
+
+/* Estilos Generales de Sección */
+.sectionContainer {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.sectionContainer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  color: #555;
+}
+
+/* Botón de Llamada a la Acción (CTA) */
+.ctaButton {
+  background-color: var(--accent-gold);
+  color: var(--secondary-blue);
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none; /* Aseguramos que no tenga borde */
+}
+
+.ctaButton:hover {
+  background-color: #e6c567;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries Generales */
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 60px 20px;
+  }
+  .sectionContainer h2 {
+    font-size: 2rem;
+  }
+}

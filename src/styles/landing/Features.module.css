@@ -1,0 +1,106 @@
+/* src/styles/landing/Features.module.css */
+
+.featuresSection {
+  position: relative;
+  z-index: 10;
+  margin-top: -80px;
+  margin-bottom: -120px;
+ 
+}
+
+/* Contenedor para aplicar sombra y centrar la grilla */
+.container {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0; /* --- Juntamos las cajas --- */
+}
+
+.featureCard {
+  background-color: #f8f9fa; /* Un blanco un poco más suave */
+  padding: 2.5rem 2rem;
+  text-align: left; /* Alineamos a la izquierda como en la referencia */
+  border-radius: 0; /* --- Eliminamos el borde redondeado --- */
+  border-right: 1px solid #e9ecef; /* Línea divisora sutil */
+  position: relative; /* Necesario para el elemento decorativo */
+}
+
+.featureCard:last-child {
+  border-right: none; /* La última caja no necesita borde derecho */
+}
+
+.iconContainer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--secondary-blue);
+  border: 1px solid #e0e0e0;
+}
+
+.featureCard h3 {
+  font-family: var(--font-headings);
+  font-size: 1.3rem;
+  color: var(--secondary-blue);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.featureCard p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- ESTILOS PARA LA PRIMERA CAJA OSCURA --- */
+.firstCard {
+  background-color: var(--accent-gold);
+  color: var(--dark-text);
+}
+
+.firstCard h3,
+.firstCard .iconContainer {
+  color: var(--dark-text);
+}
+
+.firstCard p {
+  color: var(--dark-text);
+}
+
+.firstCard .iconContainer {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- ESTILO PARA EL CUADRITO AZUL DECORATIVO --- */
+.decorativeBracket {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: -10px;
+  bottom: -10px;
+  border-right: 5px solid var(--accent-gold);
+  border-bottom: 5px solid var(--accent-gold);
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 992px) {
+  .featuresGrid {
+    grid-template-columns: 1fr; /* Apilamos en una columna */
+  }
+  .featureCard {
+    border-right: none; /* Quitamos bordes laterales */
+    border-bottom: 1px solid #e9ecef; /* Añadimos borde inferior */
+  }
+  .featureCard:last-child {
+    border-bottom: none;
+  }
+  .decorativeBracket {
+    display: none; /* Ocultamos el elemento decorativo en móvil */
+  }
+}

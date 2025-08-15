@@ -1,3 +1,4 @@
+// src/pages/loquehacemos.js
 import React from 'react';
 
 const LoQueHacemosPage = () => {

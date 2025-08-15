@@ -1,0 +1,100 @@
+/* src/styles/landing/Testimonios.module.css */
+
+.testimonialsSection {
+  padding: 50px 0;
+  position: relative;
+  background-color: #e9ecef;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h2 {
+  font-size: 2.8rem;
+  color: var(--secondary-blue);
+}
+
+.carouselContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carouselInner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+  text-align: center;
+}
+
+.quote {
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #636363;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.quote::before {
+  content: '“';
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  color: var(--primary-blue);
+  opacity: 0.1;
+  font-family: var(--font-headings);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--secondary-blue);
+}
+
+.details {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.dotsContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 2.2rem;
+  }
+  .quote {
+    font-size: 1.2rem;
+  }
+}

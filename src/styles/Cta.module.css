@@ -1,0 +1,45 @@
+/* src/styles/landing/Cta.module.css */
+.ctaSection {
+  background-color: var(--secondary-blue);
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  /* --- PATRÓN CON DEGRADADOS (EJEMPLO) --- */
+   background-image: 
+    radial-gradient(at 20% 25%, hsla(224, 73%, 35%, 0.2) 0px, transparent 50%), 
+    radial-gradient(at 78% 78%, hsla(224, 73%, 35%, 0.15) 0px, transparent 50%);
+
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.contentWrapper h2 {
+  font-family: var(--font-headings);
+  font-size: 2.8rem;
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contentWrapper p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+  .contentWrapper h2 {
+    font-size: 2.2rem;
+  }
+}

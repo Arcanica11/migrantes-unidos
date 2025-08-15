@@ -1,14 +1,21 @@
+/*
+  Archivo: Navbar.css
+  Descripción: Estilos actualizados para el Navbar, utilizando variables globales y un enfoque UI/UX profesional.
+*/
+
 .navbar {
-  background-color: #0a1128;
-  color: white;
-  padding: 1.5rem 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  position: sticky;
+  background-color: rgba(10, 17, 40, 0.603); 
+  color: var(--light-text);
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: absolute;
   top: 0;
+  left: 0;
   z-index: 1000;
+  width: 100%;
 }
 
-.navbar .container {
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,15 +23,22 @@
 }
 
 .navbar .logo {
-  font-size: 1.75rem;
+  font-family: var(--font-headings);
+  font-size: 1.5rem; /* Tamaño ajustado para mayor elegancia */
   font-weight: 700;
-  letter-spacing: -0.5px;
-  color: #fca311;
-  transition: color 0.3s ease-in-out;
+  color: var(--light-text);
+  transition: color 0.3s ease;
 }
 
 .navbar .logo:hover {
-  color: #ffd700;
+  color: var(--accent-gold);
+}
+
+/* Contenedor para enlaces de navegación y el botón */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Espacio entre la lista de enlaces y el botón */
 }
 
 .navbar .nav-links {
@@ -33,34 +47,31 @@
   padding: 0;
   display: flex;
   align-items: center;
-}
-
-.navbar .nav-links li {
-  margin-left: 2.5rem;
+  gap: 2.5rem; /* Espacio entre cada elemento del menú */
 }
 
 .navbar .nav-links a {
-  color: white;
-  text-decoration: none;
+  color: var(--light-text);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 0.5rem 0;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease;
   position: relative;
 }
 
 .navbar .nav-links a:hover {
-  color: #e9ecef;
+  color: var(--accent-gold); /* El dorado como color de interacción */
 }
 
 .navbar .nav-links a::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #fca311;
+  background-color: var(--accent-gold);
   transition: width 0.3s ease-in-out;
 }
 
@@ -68,45 +79,81 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .navbar .container {
+/* Botón de Llamada a la Acción (CTA) para WhatsApp */
+.cta-button {
+  background-color: var(--accent-gold);
+  color: var(--secondary-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6c567; /* Un dorado un poco más claro al pasar el ratón */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del Menú Hamburguesa */
+.hamburger {
+  display: none; /* Oculto en escritorio */
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger .line {
+  width: 28px;
+  height: 3px;
+  background-color: var(--light-text);
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Media Query para Responsividad (Tablets y Móviles) --- */
+@media (max-width: 992px) {
+  
+  .navbar-container {
+    flex-wrap: wrap; 
+  }
+
+  .hamburger {
+    display: block; /* Muestra el icono hamburguesa */
+    position: absolute; 
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .nav-menu {
+    display: none; /* Oculta el menú por defecto */
     flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
+    width: 100%;
+    background-color: var(--secondary-blue);
+    position: absolute;
+    top: 100%; /* Justo debajo del navbar */
+    left: 0;
+    padding: 2rem 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   }
-  .navbar .logo {
-    margin-bottom: 1rem;
+
+  .nav-menu.open {
+    display: flex; /* Muestra el menú cuando está abierto */
+    align-items: center;
   }
+
   .navbar .nav-links {
     flex-direction: column;
     width: 100%;
-    text-align: left;
-    margin-top: 1rem;
-    display: none;
+    text-align: center;
+    gap: 1.5rem; /* Espaciado ajustado para móvil */
+    margin-bottom: 1.5rem; /* Separa los enlaces del botón */
   }
-  .navbar .nav-links.open {
-    display: flex;
-  }
-  .navbar .nav-links li {
-    margin: 0.75rem 0;
-  }
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-  }
-  .hamburger .line {
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    margin-bottom: 5px;
-    transition: all 0.3s ease-in-out;
-  }
+
+  /* Animaciones para el icono hamburguesa */
   .hamburger.open .line1 {
     transform: translateY(8px) rotate(45deg);
   }
@@ -116,8 +163,4 @@
   .hamburger.open .line3 {
     transform: translateY(-8px) rotate(-45deg);
   }
-}
-
-.hamburger {
-  display: none;
 }

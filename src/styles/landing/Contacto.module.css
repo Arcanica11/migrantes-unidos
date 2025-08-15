@@ -1,0 +1,109 @@
+/* src/styles/landing/Contacto.module.css */
+
+.contactSection {
+  padding: 100px 0;
+  color: var(--light-text);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center; /* Centramos verticalmente para mejor alineación */
+}
+
+/* --- Columna Izquierda: Información --- */
+.infoContainer h2 {
+  font-size: 2.8rem;
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+}
+
+.infoContainer p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.contactList li svg {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+/* --- Columna Derecha: Formulario --- */
+.formContainer {
+  /* --- ESTILOS DE LA CAJA BLANCA --- */
+  background-color: #FFFFFF;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555; /* Texto oscuro para fondo blanco */
+  font-weight: 600;
+}
+
+.formGroup input,
+.formGroup textarea {
+  background-color: #f8f9fa; /* Fondo claro para los campos */
+  border: 1px solid #e9ecef; /* Borde sutil */
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--dark-text); /* Texto oscuro */
+  font-size: 1rem;
+  font-family: var(--font-body);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue); /* Borde azul al enfocar */
+  box-shadow: 0 0 0 3px rgba(28, 65, 140, 0.2); /* Sombra azul */
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 992px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .infoContainer {
+    text-align: center;
+  }
+  .contactList li {
+    justify-content: center;
+  }
+}
