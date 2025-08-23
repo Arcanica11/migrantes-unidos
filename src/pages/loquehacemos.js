@@ -1,12 +1,17 @@
-// src/pages/loquehacemos.js
 import React from 'react';
+import HeroServices from '../components/services/HeroServices';
+import ServicesCategories from '../components/services/ServicesCategories';
+import WorkProcess from '../components/services/WorkProcess';
+import SuccessStories from '../components/services/SuccessStories'; // <-- Importa la nueva sección
 
 const LoQueHacemosPage = () => {
   return (
-    <section className="seccion-pagina">
-      <h1>Lo que Hacemos</h1>
-      <p>Ofrecemos asesoría legal, apoyo en búsqueda de empleo y educación.</p>
-    </section>
+    <>
+      <HeroServices />
+      <ServicesCategories />
+      <WorkProcess />
+      <SuccessStories /> {/* <-- Añade la sección de historias de éxito aquí */}
+    </>
   );
 };
 

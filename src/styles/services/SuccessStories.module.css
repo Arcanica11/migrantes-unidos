@@ -1,0 +1,91 @@
+/* src/styles/services/SuccessStories.module.css */
+.successStoriesSection {
+  background-color: #eaf2f8;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a2b40;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #556070;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.carouselContainer {
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carouselInner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 0 40px;
+}
+
+.quote {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #1a2b40;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.details {
+  font-size: 0.9rem;
+  color: #7a8392;
+  margin-top: 5px;
+}
+
+.dotsContainer {
+  margin-top: 30px;
+}
+
+.dot {
+  background-color: #ccc;
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .quote {
+    font-size: 1.2rem;
+  }
+}

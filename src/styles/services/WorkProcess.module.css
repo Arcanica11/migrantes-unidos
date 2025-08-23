@@ -1,0 +1,63 @@
+/* src/styles/services/WorkProcess.module.css */
+.workProcessSection {
+  padding: 80px 0;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff; /* <-- Ajustado a blanco */
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #d1e2f6; /* Se mantiene para un contraste sutil */
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.processCard {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.stepNumber {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #007bff;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff; /* <-- Ajustado a blanco */
+}
+
+.cardText {
+  font-size: 1rem;
+  color: #d1e2f6;
+  line-height: 1.6;
+}
