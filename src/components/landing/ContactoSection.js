@@ -11,7 +11,9 @@ const icons = {
 };
 
 const ContactoSection = () => {
-  // 1. CORRECCIÓN: El estado ahora usa 'phone' en lugar de 'subject'
+  // Nota: Ya no necesitamos el estado de React para manejar los datos del formulario,
+  // pero lo mantengo por si quieres usarlo para otras validaciones de UI.
+  // Sin embargo, Formsubmit.co no lo necesita para enviar los datos.
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,28 +21,13 @@ const ContactoSection = () => {
     message: '',
   });
 
+  // La función handleChange puede ser útil para validaciones en tiempo real si las necesitas
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // 2. NUEVO: Lógica de validación para email O teléfono
-    if (!formData.email && !formData.phone) {
-      alert('Por favor, ingrese su correo electrónico o su número de teléfono para que podamos contactarlo.');
-      return; // Detiene el envío si la validación falla
-    }
-
-    console.log('Datos del formulario:', formData);
-    alert('¡Mensaje enviado! Revisa la consola para ver los datos.');
-    
-    // 3. CORRECCIÓN: Limpiamos el campo 'phone' correctamente
-    setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   return (
@@ -70,24 +57,27 @@ const ContactoSection = () => {
 
         {/* --- Columna Derecha: Formulario --- */}
         <div className={styles.formContainer}>
-          <form onSubmit={handleSubmit}>
+          <form 
+            action="https://formsubmit.co/ivangdeveloper@gmail.com" 
+            method="POST" 
+            className={styles.form}
+          >
+            {/* Los campos de formulario siguen igual */}
             <div className={styles.formGroup}>
               <label htmlFor="name">Nombre Completo</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+              <input type="text" id="name" name="name" required />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="email">Correo Electrónico</label>
-              {/* 4. CORRECCIÓN: Se quita 'required' para la validación con JS */}
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
+              <input type="email" id="email" name="email" required />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="phone">Teléfono</label>
-              {/* 5. CORRECCIÓN: Se cambia el 'value', el 'type' y se quita 'required' */}
-              <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
+              <input type="tel" id="phone" name="phone" />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="message">Mensaje</label>
-              <textarea id="message" name="message" rows="4" value={formData.message} onChange={handleChange} required></textarea>
+              <textarea id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" className={homeStyles.ctaButton}>
               Enviar Mensaje

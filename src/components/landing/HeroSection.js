@@ -25,8 +25,8 @@ const HeroSection = () => {
           <Image
             src="/logoHero.png" // **IMPORTANTE: Coloca aquí la ruta a tu imagen (ej. una abogada). Debe tener fondo transparente.**
             alt="Asesora de migración"
-            width={500}
-            height={550}
+            width={700}
+            height={700}
             className={heroStyles.heroImage}
             priority // Carga esta imagen primero por ser importante para el LCP
           />

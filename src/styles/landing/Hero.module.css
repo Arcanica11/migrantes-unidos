@@ -61,7 +61,7 @@
 .heroImage {
   width: 100%;
   height: auto; /* Mantiene la proporción */
-  max-width: 500px; /* Limita el tamaño máximo en pantallas grandes */
+  max-width: 800px; /* Limita el tamaño máximo en pantallas grandes */
   margin-bottom: 1rem;
 }
 
