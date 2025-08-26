@@ -40,17 +40,17 @@ const ContactoSection = () => {
             Su futuro es nuestra prioridad. Complete el formulario y nuestro equipo de expertos se pondrá en contacto para ofrecerle una asesoría confidencial y personalizada.
           </p>
           <ul className={styles.contactList}>
-            <li>
+            {/* <li>
               {icons.location}
               <span>123 Migration Ave, Miami, FL 33101, USA</span>
-            </li>
+            </li> */}
             <li>
               {icons.phone}
-              <span>+1 (305) 123-4567</span>
+              <span>+1 (858) 480-4506</span>
             </li>
             <li>
               {icons.email}
-              <span>consulta@migrantesunidos.com</span>
+              <span>fundacionlandermigrationgrup@gmail.com</span>
             </li>
           </ul>
         </div>
