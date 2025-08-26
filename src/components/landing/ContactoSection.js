@@ -40,10 +40,10 @@ const ContactoSection = () => {
             Su futuro es nuestra prioridad. Complete el formulario y nuestro equipo de expertos se pondrá en contacto para ofrecerle una asesoría confidencial y personalizada.
           </p>
           <ul className={styles.contactList}>
-            {/* <li>
+            <li>
               {icons.location}
-              <span>123 Migration Ave, Miami, FL 33101, USA</span>
-            </li> */}
+              <span>300 N Los Angeles St, Los Angeles, CA 90012, USA</span>
+            </li>
             <li>
               {icons.phone}
               <span>+1 (858) 480-4506</span>
