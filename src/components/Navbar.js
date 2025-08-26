@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image'; // Importar el componente Image de Next.js
+import img from "../../public/LOGO3.png"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,18 +11,21 @@ const Navbar = () => {
   };
 
   // URL de WhatsApp con tu número y un mensaje predeterminado
-  const whatsappUrl = "https://wa.me/573112151924?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20legales.";
+  const whatsappUrl = "https://wa.me/18584804506?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20legales.";
 
   return (
     <nav className="navbar">
       <div className="container navbar-container">
         {/* Logo a la izquierda */}
         <Link href="/" legacyBehavior>
-          <a className="logo">
-            {/* **RECOMENDACIÓN:** Cuando tengas tu logo, reemplaza el texto por el componente <Image /> */}
-            {/* Ejemplo: <Image src="/logo-firma.svg" alt="Logo Migrantes Unidos" width={180} height={50} /> */}
-            Fundación Migrantes Unidos
-          </a>
+            <Image
+            src={img} 
+            alt="Asesora de migración"
+            width={300}
+            height={50}
+            // className={heroStyles.heroImage}
+            priority // Carga esta imagen primero por ser importante para el LCP
+          />
         </Link>
         
         {/* Menú Hamburguesa para móvil */}

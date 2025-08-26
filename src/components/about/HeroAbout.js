@@ -5,7 +5,11 @@ import Link from 'next/link';
 import img from '../../../public/img-1.webp';
 
 
+
+
 const HeroAbout = () => {
+    const whatsappUrl = "https://wa.me/18584804506?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20legales.";
+
   return (
     <section className={styles.heroAbout}>
       <div className={styles.container}>
@@ -31,7 +35,7 @@ const HeroAbout = () => {
             Nuestra experiencia nos permite anticipar desafíos y diseñar estrategias
             efectivas para una amplia gama de visas y procesos de residencia.
           </p>
-          <Link href="/contactanos" legacyBehavior>
+          <Link href={whatsappUrl} target="_blank" legacyBehavior>
             <a className={styles.button}>Inicia tu Proceso Hoy</a>
           </Link>
         </div>

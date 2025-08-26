@@ -58,7 +58,7 @@ const ContactoSection = () => {
         {/* --- Columna Derecha: Formulario --- */}
         <div className={styles.formContainer}>
           <form 
-            action="https://formsubmit.co/ivangdeveloper@gmail.com" 
+            action="https://formsubmit.co/fundacionlandermigrationgrup@gmail.comm" 
             method="POST" 
             className={styles.form}
           >
