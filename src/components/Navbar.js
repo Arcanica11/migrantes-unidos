@@ -3,15 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image'; // Importar el componente Image de Next.js
 import img from "../../public/LOGO3.png"
 
-const Navbar = () => {
+const Navbar = ({ siteConfig }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   // URL de WhatsApp con tu número y un mensaje predeterminado
-  const whatsappUrl = "https://wa.me/18584804506?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20legales.";
+  const whatsappUrl = `https://wa.me/${siteConfig?.whatsapp_number}?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20legales.`;
 
   return (
     <nav className="navbar">

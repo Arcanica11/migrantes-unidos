@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 // No importes CSS globales aquí, y si no tienes Layout.module.css, elimina la importación.
 
-const Layout = ({ children }) => {
+const Layout = ({ children}) => {
   return (
     <div>
       <Head>
@@ -12,7 +12,6 @@ const Layout = ({ children }) => {
         <meta name="description" content="Página web para la comunidad de migrantes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <main>
         {children}
       </main>

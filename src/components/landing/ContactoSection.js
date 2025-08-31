@@ -10,7 +10,7 @@ const icons = {
   email: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>,
 };
 
-const ContactoSection = () => {
+const ContactoSection = ({ siteConfig }) => {
   // Nota: Ya no necesitamos el estado de React para manejar los datos del formulario,
   // pero lo mantengo por si quieres usarlo para otras validaciones de UI.
   // Sin embargo, Formsubmit.co no lo necesita para enviar los datos.
@@ -42,15 +42,15 @@ const ContactoSection = () => {
           <ul className={styles.contactList}>
             <li>
               {icons.location}
-              <span>300 N Los Angeles St, Los Angeles, CA 90012, USA</span>
+              <span>{siteConfig.address}</span>
             </li>
             <li>
               {icons.phone}
-              <span>+1 (858) 480-4506</span>
+              <span>{siteConfig.phone_contact}</span>
             </li>
             <li>
               {icons.email}
-              <span>fundacionlandermigrationgrup@gmail.com</span>
+              <span>{siteConfig.email_contact}</span>
             </li>
           </ul>
         </div>
@@ -58,7 +58,7 @@ const ContactoSection = () => {
         {/* --- Columna Derecha: Formulario --- */}
         <div className={styles.formContainer}>
           <form 
-            action="https://formsubmit.co/fundacionlandermigrationgrup@gmail.comm" 
+             action={`https://formsubmit.co/${siteConfig.form_recipient_email}`}  
             method="POST" 
             className={styles.form}
           >
