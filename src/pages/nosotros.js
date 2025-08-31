@@ -4,7 +4,7 @@ import HeroAbout from "../components/about/HeroAbout";
 import AchievementsSection from "../components/about/AchievementsSection";
 import TeamSection from "../components/about/TeamSection";
 import CtaAboutSection from "../components/about/CtaAboutSection";
-import { supabase } from "../lib/supabase/client"; // <-- AÑADIR ESTA LÍNEA
+import { supabase } from "../supabase/client"; // <-- AÑADIR ESTA LÍNEA
 import Navbar from "../components/Navbar";
 
 const NosotrosPage = () => {

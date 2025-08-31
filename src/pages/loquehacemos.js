@@ -4,7 +4,7 @@ import HeroServices from "../components/services/HeroServices";
 import ServicesCategories from "../components/services/ServicesCategories";
 import WorkProcess from "../components/services/WorkProcess";
 import SuccessStories from "../components/services/SuccessStories";
-import { supabase } from "../lib/supabase/client"; // <-- AÑADIR ESTA LÍNEA
+import { supabase } from "../supabase/client"; // <-- AÑADIR ESTA LÍNEA
 import Navbar from "../components/Navbar";
 
 const LoQueHacemosPage = () => {
