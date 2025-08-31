@@ -4,7 +4,7 @@ import HeroAbout from "../components/about/HeroAbout";
 import AchievementsSection from "../components/about/AchievementsSection";
 import TeamSection from "../components/about/TeamSection";
 import CtaAboutSection from "../components/about/CtaAboutSection";
-import { supabase } from "../supabase/client"; // <-- AÑADIR ESTA LÍNEA
+import { supabase } from "../supabase/client";
 import Navbar from "../components/Navbar";
 
 const NosotrosPage = () => {
@@ -32,9 +32,11 @@ export async function getStaticProps() {
     .single();
 
   if (error || !data) {
-    return { notFound: true };
+    console.error("Error al obtener datos del sitio:", error);
+    return { notFound: true }; // Muestra la página 404 si no encuentra datos
   }
 
+  // Convertimos el array de configuraciones en un objeto más fácil de usar
   const configurations = data.site_configurations.reduce((acc, config) => {
     acc[config.key] = config.value;
     return acc;
@@ -49,6 +51,6 @@ export async function getStaticProps() {
     props: {
       siteData,
     },
-    revalidate: 60,
+    revalidate: 60, // Opcional: Re-genera la página cada 60 segundos
   };
 }

@@ -21,7 +21,6 @@ const LoQueHacemosPage = () => {
 
 export default LoQueHacemosPage;
 
-// --- AÑADE TODA ESTA FUNCIÓN AL FINAL DEL ARCHIVO ---
 export async function getStaticProps() {
   const slug = process.env.WEBSITE_SLUG;
 
@@ -32,9 +31,11 @@ export async function getStaticProps() {
     .single();
 
   if (error || !data) {
-    return { notFound: true };
+    console.error("Error al obtener datos del sitio:", error);
+    return { notFound: true }; // Muestra la página 404 si no encuentra datos
   }
 
+  // Convertimos el array de configuraciones en un objeto más fácil de usar
   const configurations = data.site_configurations.reduce((acc, config) => {
     acc[config.key] = config.value;
     return acc;
@@ -49,6 +50,6 @@ export async function getStaticProps() {
     props: {
       siteData,
     },
-    revalidate: 60,
+    revalidate: 60, // Opcional: Re-genera la página cada 60 segundos
   };
 }

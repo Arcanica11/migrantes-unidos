@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from './Navbar';
 import Footer from './Footer';
 // No importes CSS globales aquí, y si no tienes Layout.module.css, elimina la importación.
 
