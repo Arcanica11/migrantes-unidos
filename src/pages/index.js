@@ -22,7 +22,6 @@ const HomePage = ({ siteData }) => {
       <MisionVisionSection />
       <ServiciosSection />
       <TestimoniosSection />
-      {/* Le pasamos la configuración al componente de Contacto */}
       <ContactoSection siteConfig={siteData.config} />
     </>
   );

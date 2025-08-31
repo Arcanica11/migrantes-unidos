@@ -7,7 +7,7 @@ import SuccessStories from "../components/services/SuccessStories";
 import { supabase } from "../supabase/client"; // <-- AÑADIR ESTA LÍNEA
 import Navbar from "../components/Navbar";
 
-const LoQueHacemosPage = () => {
+const LoQueHacemosPage = ({ siteData }) => {
   return (
     <>
       <Navbar siteConfig={siteData.config} />

@@ -7,7 +7,7 @@ import CtaAboutSection from "../components/about/CtaAboutSection";
 import { supabase } from "../supabase/client";
 import Navbar from "../components/Navbar";
 
-const NosotrosPage = () => {
+const NosotrosPage = ({ siteData }) => {
   return (
     <>
       <Navbar siteConfig={siteData.config} />
